@@ -1,0 +1,42 @@
+﻿{
+	// you can define multiple editors
+	propertyEditors: [
+		{
+			/*this must be a unique alias*/
+			alias: "Our.Umbraco.YoutubePicker.YoutubePicker",
+			/*the name*/
+			name: "Pickers",
+			/*the icon*/
+			icon: "icon-video",
+			/*grouping for "Select editor" dialog*/
+			group: "Content Picker",
+			/*the HTML file we will load for the editor*/
+			editor: {
+				view: "~/App_Plugins/YoutubePicker/youtubepicker.html"
+			},
+			prevalues: {
+				fields: [
+					{
+						label: "Youtube API Key",
+						description: "Please enter your Youtube API Key",
+						key: "apikey",
+						view: "textarea"
+					},
+					{
+						label: "Youtube Channel ID",
+						description: "Please enter your Youtube Channel ID",
+						key: "channelId",
+						view: "textstring"
+					}
+				]
+			}
+		}
+	]
+	,
+	// array of files we want to inject into the application on app_start
+	javascript: [
+	    '~/App_Plugins/YoutubePicker/youtubepicker.controller.js',
+		'~/App_Plugins/YoutubePicker/youtubepicker.overlay.controller.js',
+		'~/App_Plugins/YoutubePicker/video.resource.js'
+	]
+}
