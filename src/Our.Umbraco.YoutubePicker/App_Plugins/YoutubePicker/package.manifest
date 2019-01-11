@@ -20,13 +20,23 @@
 						label: "Youtube API Key",
 						description: "Please enter your Youtube API Key",
 						key: "apikey",
-						view: "textarea"
+						view: "requiredfield",
+						validation: [
+							{
+								type: "Required" 
+							}                        
+						]
 					},
 					{
 						label: "Youtube Channel ID",
 						description: "Please enter your Youtube Channel ID",
 						key: "channelId",
-						view: "textstring"
+						view: "requiredfield",
+						validation: [
+							{
+								type: "Required" 
+							}                        
+						]
 					}
 				]
 			}

@@ -23,15 +23,7 @@
             }
         };
 
-        $scope.selectId = function(id) {
-            $scope.model.selectedId = id;
-            $scope.model.hideSubmitButton = false;
-        };
-
         $scope.clickItem = function (item, items, $index) {
-
-            console.log(items);
-
             for (i = 0; i < items.length; i++) {
                 if (i != $index) {
                     var it = items[i];
@@ -49,7 +41,6 @@
                 $scope.model.selectedId = item.id;
                 $scope.model.hideSubmitButton = false;
             }
-            
             return item;
         };
     });
