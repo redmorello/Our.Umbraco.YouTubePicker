@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Ian Houghton</authors>
+    <owners>Ian Houghton</owners>
+    <licenseUrl>https://github.com/redmorello/Our.Umbraco.YoutubePicker/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/redmorello/Our.Umbraco.YoutubePicker/</projectUrl>
+    <iconUrl>https://github.com/redmorello/Our.Umbraco.YoutubePicker/blob/master/images/health-check.png?raw=true</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Umbraco CMS Datatype - Youtube Picker</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Our.Umbraco.YoutubePicker Umbraco Youtube Property Editor Our CMS Contrib lib library</tags>
+  </metadata>
+</package>

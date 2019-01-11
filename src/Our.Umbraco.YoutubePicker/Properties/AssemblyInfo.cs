@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Our.Umbraco.YoutubePicker")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Umbraco CMS Datatype - Youtube Picker")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("RedMorello Limited")]
 [assembly: AssemblyProduct("Our.Umbraco.YoutubePicker")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

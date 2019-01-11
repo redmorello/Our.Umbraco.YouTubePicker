@@ -80,3 +80,4 @@ src/.vs/
 /src/Website/App_Data/NuGetBackup
 /src/Website/App_Data/TEMP
 /src/Website/App_Data/umbraco.config
+*.nupkg

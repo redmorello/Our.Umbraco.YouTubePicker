@@ -267,6 +267,7 @@
   <ItemGroup>
     <Content Include="App_Plugins\YoutubePicker\package.manifest" />
     <Content Include="App_Plugins\YoutubePicker\youtubepicker.controller.js" />
+    <Content Include="Our.Umbraco.YoutubePicker.nuspec" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
