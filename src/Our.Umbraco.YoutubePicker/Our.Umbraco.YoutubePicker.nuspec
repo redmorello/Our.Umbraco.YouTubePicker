@@ -15,7 +15,4 @@
     <copyright>Copyright 2019</copyright>
     <tags>Our.Umbraco.YoutubePicker Umbraco Youtube Property Editor Our CMS Contrib lib library</tags>
   </metadata>
-  <files>
-      <file src="App_Plugins\Our.Umbraco.YoutubePicker\**\*.*" target="content\App_Plugins\Our.Umbraco.YoutubePicker" />
-  </files>
 </package>
