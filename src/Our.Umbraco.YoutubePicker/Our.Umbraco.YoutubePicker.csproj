@@ -55,7 +55,6 @@
     <Content Include="App_Plugins\OurUmbracoYoutubePicker\package.manifest" />
     <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubepicker.controller.js" />
     <Content Include="Our.Umbraco.YoutubePicker.nuspec" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
