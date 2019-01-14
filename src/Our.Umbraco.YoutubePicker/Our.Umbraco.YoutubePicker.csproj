@@ -280,10 +280,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\YoutubePicker\video.resource.js" />
-    <Content Include="App_Plugins\YoutubePicker\youtubepicker.overlay.controller.js" />
-    <Content Include="App_Plugins\YoutubePicker\youtubepicker.html" />
-    <Content Include="App_Plugins\YoutubePicker\youtubeView.html" />
+    <Content Include="App_Plugins\Our.Umbraco.YoutubePicker\video.resource.js" />
+    <Content Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubepicker.overlay.controller.js" />
+    <Content Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubepicker.html" />
+    <Content Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubeView.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -291,8 +291,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\YoutubePicker\package.manifest" />
-    <Content Include="App_Plugins\YoutubePicker\youtubepicker.controller.js" />
+    <Content Include="App_Plugins\Our.Umbraco.YoutubePicker\package.manifest" />
+    <Content Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubepicker.controller.js" />
     <Content Include="Our.Umbraco.YoutubePicker.nuspec" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
