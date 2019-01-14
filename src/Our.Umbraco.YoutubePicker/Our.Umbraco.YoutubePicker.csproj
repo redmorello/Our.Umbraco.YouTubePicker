@@ -241,7 +241,7 @@
     </Reference>
     <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -352,18 +352,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Plugins\Our.Umbraco.YoutubePicker\video.resource.js" />
-    <None Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubepicker.overlay.controller.js" />
-    <None Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubepicker.html" />
-    <None Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubeView.html" />
+    <Content Include="App_Plugins\OurUmbracoYoutubePicker\video.resource.js" />
+    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubepicker.overlay.controller.js" />
+    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubepicker.html" />
+    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubeView.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\YoutubeApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Plugins\Our.Umbraco.YoutubePicker\package.manifest" />
-    <None Include="App_Plugins\Our.Umbraco.YoutubePicker\youtubepicker.controller.js" />
+    <Content Include="App_Plugins\OurUmbracoYoutubePicker\package.manifest" />
+    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubepicker.controller.js" />
     <Content Include="Our.Umbraco.YoutubePicker.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>

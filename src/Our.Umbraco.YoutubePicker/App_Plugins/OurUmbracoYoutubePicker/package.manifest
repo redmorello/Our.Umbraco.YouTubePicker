@@ -5,14 +5,14 @@
 			/*this must be a unique alias*/
 			alias: "Our.Umbraco.YoutubePicker.YoutubePicker",
 			/*the name*/
-			name: "Pickers",
+			name: "Youtube Picker",
 			/*the icon*/
 			icon: "icon-video",
 			/*grouping for "Select editor" dialog*/
 			group: "Content Picker",
 			/*the HTML file we will load for the editor*/
 			editor: {
-				view: "~/App_Plugins/YoutubePicker/youtubepicker.html"
+				view: "~/App_Plugins/OurUmbracoYoutubePicker/youtubepicker.html"
 			},
 			prevalues: {
 				fields: [
@@ -45,8 +45,8 @@
 	,
 	// array of files we want to inject into the application on app_start
 	javascript: [
-	    '~/App_Plugins/YoutubePicker/youtubepicker.controller.js',
-		'~/App_Plugins/YoutubePicker/youtubepicker.overlay.controller.js',
-		'~/App_Plugins/YoutubePicker/video.resource.js'
+	    '~/App_Plugins/OurUmbracoYoutubePicker/youtubepicker.controller.js',
+		'~/App_Plugins/OurUmbracoYoutubePicker/youtubepicker.overlay.controller.js',
+		'~/App_Plugins/OurUmbracoYoutubePicker/video.resource.js'
 	]
 }

@@ -20,7 +20,7 @@
 
         $scope.selectVideo = function () {
             $scope.overlay = {
-                view: "/App_Plugins/YoutubePicker/youtubeView.html",
+                view: "/App_Plugins/OurUmbracoYoutubePicker/youtubeView.html",
                 title: "Select a Video or Playlist",
                 show: true,
 

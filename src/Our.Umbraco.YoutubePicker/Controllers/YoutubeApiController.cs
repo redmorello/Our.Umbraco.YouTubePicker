@@ -11,7 +11,7 @@ using Umbraco.Web.Mvc;
 
 namespace Our.Umbraco.YoutubePicker.Controllers
 {
-    [PluginController("Our.Umbraco.YoutubePicker")]
+    [PluginController("OurUmbracoYoutubePicker")]
     public class YoutubeApiController : UmbracoAuthorizedJsonController
     {
         public List<Video> GetAll(string apikey, string channelId)
