@@ -28,10 +28,8 @@
                 channelId: $scope.model.config.channelId,
                 options: ['Please select...', 'Videos', 'Playlists'],
                 selectedOption: 'Please select...',
-                videos: [],
-                playlists: [],
-                showVideos: false,
-                showPlaylists: false,
+                items: [],
+                showResults: false,
                 selectedId: null,
                 type: null,
 

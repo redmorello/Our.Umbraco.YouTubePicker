@@ -6,34 +6,13 @@
     </div>
 
     <br />
-    
-    <div data-element="media-grid" class="umb-media-grid" ng-if="model.showVideos">
-        <div data-element="media-grid-item-{{$index}}" style="width: 45%;" class="umb-media-grid__item" title="{{item.title}}" ng-click="clickItem(item, model.videos, $index)" ng-repeat="item in model.videos | filter:filterBy" ng-class="{'-selected': item.selected}">
+
+    <div data-element="media-grid" class="umb-media-grid" ng-if="model.showResults">
+        <div data-element="media-grid-item-{{$index}}" style="width: 45%;" class="umb-media-grid__item" title="{{item.snippet.title}}" ng-click="clickItem(item, model.items, $index)" ng-repeat="item in model.items | filter:filterBy" ng-class="{'-selected': item.selected}">
             <div>
                 <i ng-show="item.selected" class="icon-check umb-media-grid__checkmark"></i>
 
-                <div data-element="media-grid-item-edit" class="umb-media-grid__item-overlay" ng-class="{'-locked': item.selected}" ng-click="clickItem(item, model.videos, $index)">
-                    <div class="umb-media-grid__item-name">{{item.title}}</div>
-                </div>
-
-                <!-- Check backgrund -->
-                <div class="umb-media-grid__image-background" ng-if="item.thumbnail"></div>
-
-                <!-- Image thumbnail -->
-                <img class="umb-media-grid__item-image" width="{{item.thumbnail.width}}" height="{{item.thumbnail.height}}" ng-if="item.thumbnail" ng-src="{{item.thumbnail.url}}" alt="{{item.title}}" draggable="false" />
-
-                <!-- Transparent image - fallback - used to keep image proportions on wrapper-->
-                <img class="umb-media-grid__item-image-placeholder" ng-if="!item.thumbnail || !item.thumbnail.url" src="assets/img/transparent.png" alt="{{item.title}}" draggable="false" />
-            </div>
-        </div>
-    </div>
-
-    <div data-element="media-grid" class="umb-media-grid" ng-if="model.showPlaylists">
-        <div data-element="media-grid-item-{{$index}}" style="width: 45%;" class="umb-media-grid__item" title="{{item.snippet.title}}" ng-click="clickItem(item, model.playlists, $index)" ng-repeat="item in model.playlists | filter:filterBy" ng-class="{'-selected': item.selected}">
-            <div>
-                <i ng-show="item.selected" class="icon-check umb-media-grid__checkmark"></i>
-
-                <div data-element="media-grid-item-edit" class="umb-media-grid__item-overlay" ng-class="{'-locked': item.selected}" ng-click="clickItemName(item, model.playlists, $index)">
+                <div data-element="media-grid-item-edit" class="umb-media-grid__item-overlay" ng-class="{'-locked': item.selected}" ng-click="clickItemName(item, model.items, $index)">
                     <div class="umb-media-grid__item-name">{{item.snippet.title}}</div>
                 </div>
 
