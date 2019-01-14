@@ -5,12 +5,12 @@ angular.module('umbraco.resources').factory('videoResource',
         return {
             getAll: function (apikey, channelId) {
                 return umbRequestHelper.resourcePromise(
-                    $http.get("backoffice/YoutubePicker/YoutubeApi/GetAll/?apikey=" + apikey + "&channelId=" + channelId),
+                    $http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=video&key=" + apikey + "&channelId=" + channelId),
                     "Failed to retrieve the list of Videos");
             },
             getAllPlaylists: function (apikey, channelId) {
                 return umbRequestHelper.resourcePromise(
-                    $http.get("backoffice/YoutubePicker/YoutubeApi/GetAllPlaylists/?apikey=" + apikey + "&channelId=" + channelId),
+                    $http.get("https://www.googleapis.com/youtube/v3/playlists?part=snippet&maxResults=50&key=" + apikey + "&channelId=" + channelId),
                     "Failed to retrieve the list of Playlists");
             }
         };

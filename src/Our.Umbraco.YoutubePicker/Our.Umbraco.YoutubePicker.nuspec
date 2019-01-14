@@ -11,7 +11,7 @@
     <iconUrl>https://github.com/redmorello/Our.Umbraco.YoutubePicker/blob/master/images/health-check.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Umbraco CMS Datatype - Youtube Picker</description>
-    <releaseNotes>Downgraded version of Umbraco to 7.5.14 to cover more applications.</releaseNotes>
+    <releaseNotes>Downgraded version of Umbraco to 7.5.14 to cover more applications, removed C# Google API nuget packages.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Our.Umbraco.YoutubePicker Umbraco Youtube Property Editor Our CMS Contrib lib library</tags>
   </metadata>
