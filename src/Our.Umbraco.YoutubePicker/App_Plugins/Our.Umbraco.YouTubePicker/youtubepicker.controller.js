@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco")
-    .controller("Our.Umbraco.YoutubePicker.VideoPicker", function ($scope, videoResource) {
+    .controller("Our.Umbraco.YouTubePicker.VideoPicker", function ($scope, videoResource) {
 
         function setupViewModel() {
             if ($scope.model.value) {
@@ -20,7 +20,7 @@
 
         $scope.selectVideo = function () {
             $scope.overlay = {
-                view: "/App_Plugins/OurUmbracoYoutubePicker/youtubeView.html",
+                view: "/App_Plugins/Our.Umbraco.YouTubePicker/youtubeView.html",
                 title: "Select a Video or Playlist",
                 show: true,
 
@@ -44,8 +44,6 @@
                     } else if (model.type === 'playlist') {
                         $scope.model.value = 'https://www.youtube.com/embed/?list=' + model.selectedId + '&listType=playlist&rel=0&modestbranding=1';
                     }
-                    //$scope.model.value = model.selectedId;
-                    //$scope.videoUrl = 'https://via.placeholder.com/150';
                 },
                 close: function (oldModel) {
 					// do close magic here

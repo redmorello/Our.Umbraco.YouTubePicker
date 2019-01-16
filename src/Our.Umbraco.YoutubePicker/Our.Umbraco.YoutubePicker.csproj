@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Our.Umbraco.YoutubePicker</RootNamespace>
-    <AssemblyName>Our.Umbraco.YoutubePicker</AssemblyName>
+    <RootNamespace>Our.Umbraco.YouTubePicker</RootNamespace>
+    <AssemblyName>Our.Umbraco.YouTubePicker</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -43,18 +43,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\OurUmbracoYoutubePicker\video.resource.js" />
-    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubepicker.overlay.controller.js" />
-    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubepicker.html" />
-    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubeView.html" />
+    <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\video.resource.js" />
+    <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubepicker.overlay.controller.js" />
+    <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubepicker.html" />
+    <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubeView.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\OurUmbracoYoutubePicker\package.manifest" />
-    <Content Include="App_Plugins\OurUmbracoYoutubePicker\youtubepicker.controller.js" />
-    <Content Include="Our.Umbraco.YoutubePicker.nuspec" />
+    <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\package.manifest" />
+    <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubepicker.controller.js" />
+    <Content Include="Our.Umbraco.YouTubePicker.nuspec" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
