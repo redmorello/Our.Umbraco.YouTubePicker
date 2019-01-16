@@ -3,22 +3,22 @@
 	propertyEditors: [
 		{
 			/*this must be a unique alias*/
-			alias: "Our.Umbraco.YoutubePicker.YoutubePicker",
+			alias: "Our.Umbraco.YouTubePicker",
 			/*the name*/
-			name: "Youtube Picker",
+			name: "YouTube Picker",
 			/*the icon*/
 			icon: "icon-video",
 			/*grouping for "Select editor" dialog*/
 			group: "Content Picker",
 			/*the HTML file we will load for the editor*/
 			editor: {
-				view: "~/App_Plugins/OurUmbracoYoutubePicker/youtubepicker.html"
+				view: "~/App_Plugins/Our.Umbraco.YouTubePicker/youtubepicker.html"
 			},
 			prevalues: {
 				fields: [
 					{
-						label: "Youtube API Key",
-						description: "Please enter your Youtube API Key",
+						label: "YouTube API Key",
+						description: "Please enter your YouTube API Key",
 						key: "apikey",
 						view: "requiredfield",
 						validation: [
@@ -28,8 +28,8 @@
 						]
 					},
 					{
-						label: "Youtube Channel ID",
-						description: "Please enter your Youtube Channel ID",
+						label: "YouTube Channel ID",
+						description: "Please enter your YouTube Channel ID",
 						key: "channelId",
 						view: "requiredfield",
 						validation: [
@@ -45,8 +45,8 @@
 	,
 	// array of files we want to inject into the application on app_start
 	javascript: [
-	    '~/App_Plugins/OurUmbracoYoutubePicker/youtubepicker.controller.js',
-		'~/App_Plugins/OurUmbracoYoutubePicker/youtubepicker.overlay.controller.js',
-		'~/App_Plugins/OurUmbracoYoutubePicker/video.resource.js'
+	    '~/App_Plugins/Our.Umbraco.YouTubePicker/youtubepicker.controller.js',
+		'~/App_Plugins/Our.Umbraco.YouTubePicker/youtubepicker.overlay.controller.js',
+		'~/App_Plugins/Our.Umbraco.YouTubePicker/video.resource.js'
 	]
 }

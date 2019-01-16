@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco")
-    .controller("Our.Umbraco.YoutubePicker.Overlay", function ($scope, videoResource) {
+    .controller("Our.Umbraco.YouTubePicker.Overlay", function ($scope, videoResource) {
 
         $scope.onChange = function () {
             //console.log($scope.model);
@@ -10,14 +10,14 @@
             if ($scope.model.selectedOption === 'Videos') {
                 videoResource.getAll($scope.model.apikey, $scope.model.channelId).then(function (response) {
                     $scope.model.items = response.items;
-                    console.log($scope.model.items);
+                    //console.log($scope.model.items);
                     $scope.model.showResults = true;
                     $scope.model.type = 'video';
                 });
             } else if ($scope.model.selectedOption === 'Playlists') {
                 videoResource.getAllPlaylists($scope.model.apikey, $scope.model.channelId).then(function (response) {
                     $scope.model.items = response.items;
-                    console.log($scope.model.items);
+                    //console.log($scope.model.items);
                     $scope.model.showResults = true;
                     $scope.model.type = 'playlist';
                 });

@@ -6,13 +6,13 @@
     <title>$title$</title>
     <authors>Ian Houghton</authors>
     <owners>Ian Houghton</owners>
-    <licenseUrl>https://github.com/redmorello/Our.Umbraco.YoutubePicker/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/redmorello/Our.Umbraco.YoutubePicker/</projectUrl>
-    <iconUrl>https://github.com/redmorello/Our.Umbraco.YoutubePicker/blob/master/images/health-check.png?raw=true</iconUrl>
+    <licenseUrl>https://github.com/redmorello/Our.Umbraco.YouTubePicker/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/redmorello/Our.Umbraco.YouTubePicker/</projectUrl>
+    <iconUrl>https://github.com/redmorello/Our.Umbraco.YouTubePicker/blob/master/images/youtube.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Umbraco CMS Datatype - Youtube Picker</description>
-    <releaseNotes>Downgraded version of Umbraco to 7.5.14 to cover more applications, removed C# Google API nuget packages.</releaseNotes>
+    <description>Umbraco CMS Datatype - YouTube Picker</description>
+    <releaseNotes>Changed App_Plugins folder name, changed Youtube to YouTube.</releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>Our.Umbraco.YoutubePicker Umbraco Youtube Property Editor Our CMS Contrib lib library</tags>
+    <tags>Our.Umbraco.YouTubePicker Umbraco YouTube Property Editor Our CMS Contrib lib library</tags>
   </metadata>
 </package>
