@@ -10,7 +10,10 @@ You can login to the website and test the YouTube Picker. Here are the login det
 Usage:
 1) Add the package via nuget: https://www.nuget.org/packages/Our.Umbraco.YouTubePicker/
 2) Create a new Datatype in the Developer section of Umbraco
-3) Add your Google API key, and the ID of the YouTube Channel you want to list the videos & playlists from.
+3) Add your:
+    a) Google API key
+    b) The ID of the YouTube Channel you want to list the videos & playlists from
+    c) The number of results per page (YouTube maximum is 50).
 4) Add a new field to your page, and use the YouTube Picker datatype.
 
 *When creating the nuget package, use the following command*
