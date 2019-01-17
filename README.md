@@ -15,3 +15,7 @@ Usage:
 
 *When creating the nuget package, use the following command*
 nuget pack Our.Umbraco.YouTubePicker.csproj -Exclude bin/**/*.*
+
+
+*YouTube API Explorer*
+https://developers.google.com/apis-explorer/#p/youtube/v3/
