@@ -21,4 +21,5 @@ nuget pack Our.Umbraco.YouTubePicker.csproj -Exclude bin/**/*.*
 
 
 *YouTube API Explorer*
+
 https://developers.google.com/apis-explorer/#p/youtube/v3/
