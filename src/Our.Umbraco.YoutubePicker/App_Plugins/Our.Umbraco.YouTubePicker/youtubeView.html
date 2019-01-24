@@ -1,18 +1,37 @@
-﻿<div class="umb-editor umb-mediapicker" ng-controller="Our.Umbraco.YouTubePicker.Overlay">
-    <div>
+﻿<div class="umb-editor umb-mediapicker youtubepicker" ng-controller="Our.Umbraco.YouTubePicker.Overlay">
+    <div class="header">
         <select ng-options="option as option for option in model.options"
                 ng-model="model.selectedOption"
                 ng-change="onChange()"></select>
+        <div>Total results: <span>{{model.totalResults}}</span></div>
     </div>
 
     <br />
 
     <div data-element="media-grid" class="umb-media-grid" ng-if="model.showResults">
+
+        <div class="pagination">
+            <ul>
+                <li class="left" ng-class="{'disabled': model.previousPageToken == null}">
+                    <a href="#" ng-click="clickPager(model.previousPageToken, 0)" prevent-default><span aria-hidden="true">&larr;</span>&nbsp;Prev&nbsp;{{model.perPage}}
+                    </a>
+                </li>
+                <li class="center">
+                    <span>{{model.currentLocation}}</span>
+                </li>
+                <li class="right" ng-class="{'disabled': model.nextPageToken == null}">
+                    <a href="#" ng-click="clickPager(model.nextPageToken, 1)" prevent-default>
+                        &nbsp;Next&nbsp;{{model.perPage}}<span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
         <div data-element="media-grid-item-{{$index}}" style="width: 45%;" class="umb-media-grid__item" title="{{item.snippet.title}}" ng-click="clickItem(item, model.items, $index)" ng-repeat="item in model.items | filter:filterBy" ng-class="{'-selected': item.selected}">
             <div>
                 <i ng-show="item.selected" class="icon-check umb-media-grid__checkmark"></i>
 
-                <div data-element="media-grid-item-edit" class="umb-media-grid__item-overlay" ng-class="{'-locked': item.selected}" ng-click="clickItemName(item, model.items, $index)">
+                <div data-element="media-grid-item-edit" class="umb-media-grid__item-overlay" ng-class="{'-locked': item.selected}" ng-click="clickItem(item, model.items, $index)">
                     <div class="umb-media-grid__item-name">{{item.snippet.title}}</div>
                 </div>
 

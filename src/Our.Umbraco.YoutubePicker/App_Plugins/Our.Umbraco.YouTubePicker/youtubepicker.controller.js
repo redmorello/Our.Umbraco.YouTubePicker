@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco")
-    .controller("Our.Umbraco.YouTubePicker.VideoPicker", function ($scope, videoResource) {
+    .controller("Our.Umbraco.YouTubePicker.VideoPicker", function ($scope) {
 
         function setupViewModel() {
             if ($scope.model.value) {
@@ -26,12 +26,14 @@
 
                 apikey: $scope.model.config.apikey,
                 channelId: $scope.model.config.channelId,
+                perPage: $scope.model.config.perPage > 50 ? 50 : $scope.model.config.perPage,
                 options: ['Please select...', 'Videos', 'Playlists'],
                 selectedOption: 'Please select...',
                 items: [],
                 showResults: false,
                 selectedId: null,
                 type: null,
+                totalResults: 0,
 
                 hideSubmitButton: true,
                 submit: function (model) {
