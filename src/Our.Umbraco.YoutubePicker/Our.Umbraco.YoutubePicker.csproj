@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\video.resource.js" />
+    <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubepicker.css" />
     <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubepicker.overlay.controller.js" />
     <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubepicker.html" />
     <Content Include="App_Plugins\Our.Umbraco.YouTubePicker\youtubeView.html" />
