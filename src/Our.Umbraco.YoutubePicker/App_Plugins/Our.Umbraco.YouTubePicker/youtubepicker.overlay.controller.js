@@ -1,8 +1,16 @@
 ﻿angular.module("umbraco")
     .controller("Our.Umbraco.YouTubePicker.Overlay", function ($scope, videoResource) {
 
-        $scope.onChange = function () {
-            //console.log($scope.model);
+        $scope.onChange = function() {
+            if ($scope.model.selectedOption === 'Videos') {
+                $scope.model.submitDisabled = false;
+            } else if ($scope.model.selectedOption === 'Playlists') {
+                $scope.model.submitDisabled = false;
+            }
+        }
+
+        $scope.onClick = function () {
+            console.log($scope.model);
             $scope.model.showResults = false;
             $scope.model.startNumber = 1; 
             $scope.model.currentLocation = currentLocation(null);
@@ -13,9 +21,9 @@
             $scope.model.previousPageToken = null;
 
             if ($scope.model.selectedOption === 'Videos') {
-                getAll(null, null);
+                search('video', null, null);
             } else if ($scope.model.selectedOption === 'Playlists') {
-                getAllPlaylists(null, null);
+                search('playlist', null, null);
             }
         };
 
@@ -35,7 +43,7 @@
             } else {
                 item.selected = true;
                 if ($scope.model.type === 'playlist') {
-                    $scope.model.selectedId = item.id;
+                    $scope.model.selectedId = item.id.playlistId;
                 } else {
                     $scope.model.selectedId = item.id.videoId;
                 }
@@ -45,16 +53,12 @@
             return item;
         };
 
-        $scope.clickPager = function(token, direction) {
-            if ($scope.model.selectedOption === 'Videos') {
-                getAll(token, direction);
-            } else if ($scope.model.selectedOption === 'Playlists') {
-                getAllPlaylists(token, direction);
-            }
+        $scope.clickPager = function (token, direction) {
+            search($scope.model.type, token, direction);
         };
 
-        function getAll(token, direction) {
-            videoResource.getAll($scope.model.apikey, $scope.model.channelId, $scope.model.perPage, token).then(function (response) {
+        function search(type, token, direction) {
+            videoResource.search($scope.model.apikey, $scope.model.channelId, type, $scope.model.perPage, token, $scope.model.query).then(function (response) {
                 $scope.model.items = response.items;
                 //console.log($scope.model.items);
                 $scope.model.totalResults = response.pageInfo.totalResults;
@@ -62,19 +66,7 @@
                 $scope.model.nextPageToken = response.nextPageToken;
                 $scope.model.previousPageToken = response.prevPageToken;
                 $scope.model.showResults = true;
-                $scope.model.type = 'video';
-            });
-        }
-
-        function getAllPlaylists(token, direction) {
-            videoResource.getAllPlaylists($scope.model.apikey, $scope.model.channelId, $scope.model.perPage, token).then(function (response) {
-                $scope.model.items = response.items;
-                //console.log($scope.model.items);
-                $scope.model.totalResults = response.pageInfo.totalResults;
-                $scope.model.currentLocation = currentLocation(direction);
-                $scope.model.previousPageToken = response.prevPageToken;
-                $scope.model.showResults = true;
-                $scope.model.type = 'playlist';
+                $scope.model.type = type;
             });
         }
 
@@ -86,8 +78,8 @@
                 return $scope.model.startNumber + ' of ' + end;
             } else if (direction === 1) {
                 $scope.model.startNumber = Number($scope.model.startNumber) + Number($scope.model.perPage);
-                end = $scope.model.startNumber + Number($scope.model.perPage);
-                end = end > totalResults ? totalResults : end;
+                end = $scope.model.startNumber + Number($scope.model.perPage - 1);
+                end = end > $scope.model.totalResults ? $scope.model.totalResults : end;
                 return $scope.model.startNumber + ' of ' + end;
             } else {
                 return '1 of ' + $scope.model.perPage;

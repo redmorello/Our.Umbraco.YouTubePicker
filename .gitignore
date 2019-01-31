@@ -82,3 +82,5 @@ src/.vs/
 /src/Website/App_Data/umbraco.config
 *.nupkg
 *.zip
+keys.txt
+src/Website/App_Plugins/Our.Umbraco.YouTubePicker/

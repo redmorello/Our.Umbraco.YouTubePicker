@@ -29,18 +29,13 @@
 					},
 					{
 						label: "YouTube Channel ID",
-						description: "Please enter your YouTube Channel ID",
+						description: "The channelId parameter indicates that the API response should only contain resources created by the channel (string)",
 						key: "channelId",
-						view: "requiredfield",
-						validation: [
-							{
-								type: "Required" 
-							}                        
-						]
+						view: "textstring",
 					},
 					{
 						label: "Max Results Per Page",
-						description: "Maximum number of results per page, YouTube limit is 50",
+						description: "The maxResults parameter specifies the maximum number of items that should be returned in the result set. (integer, 0-50)",
 						key: "perPage",
 						view: "number",
 						validation: [
@@ -48,7 +43,38 @@
 								type: "Required" 
 							}                        
 						]
+					},
+					{
+						label: "No Cookie Embed Player",
+						description: "If the parameter is checked, we'll use the https://www.youtube-nocookie.com/ embed link instead.",
+						key: "nocookie",
+						view: "boolean"
+					},
+					{
+						label: "Related Videos",
+						description: "If the parameter is unchecked, then related videos will come from the same channel as the video that was just played. If the parameter is checked, then the player shows related videos from YouTube.",
+						key: "rel",
+						view: "boolean"
+					},
+					{
+						label: "Modest Branding",
+						description: "Set the parameter to checked to prevent the YouTube logo from displaying in the control bar.",
+						key: "modestbranding",
+						view: "boolean"
+					},
+					{
+						label: "Autoplay",
+						description: "Checking this parameter makes the initial video automatically start to play when the player loads.",
+						key: "autoplay",
+						view: "boolean"
+					},
+					{
+						label: "Prevent Fullscreen",
+						description: "Set the parameter to checked to prevent the fullscreen button from displaying in the player.",
+						key: "fs",
+						view: "boolean"
 					}
+
 				]
 			}
 		}

@@ -2,12 +2,25 @@
     width: 100%;
 }
 
-    .youtubepicker .header select, .youtubepicker .header div {
-        width: 50%;
+    .youtubepicker .header input.searchTerm {
+        width: 97%;
+        margin-bottom: 5px;
     }
 
     .youtubepicker .header select {
         float: left;
+        padding-right: 5px;
+        width: 50%;
+    }
+
+    .youtubepicker .header button.btn {
+        float: right;
+        width: 48%;
+    }
+
+    .youtubepicker .header button span {
+        text-align: center;
+        width: 100%;
     }
 
     .youtubepicker .header div {

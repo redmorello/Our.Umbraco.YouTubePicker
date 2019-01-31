@@ -1,5 +1,12 @@
 ﻿<div class="umb-editor umb-mediapicker youtubepicker" ng-controller="Our.Umbraco.YouTubePicker.Overlay">
     <div class="header">
+        <input type="text" class="searchTerm" ng-model="model.query" placeholder="keyword search term..." />
+        <button type="button" class="btn umb-button__button btn-success" ng-click="onClick()" ng-disabled="model.submitDisabled">
+            <span class="umb-button__content">
+                <span class="ng-scope ng-binding">Submit</span>
+            </span>
+        </button>
+        <!--<input type="button" ng-click="onClick()" class="btn btn-primary" value="Search" ng-disabled="model.submitDisabled" />-->
         <select ng-options="option as option for option in model.options"
                 ng-model="model.selectedOption"
                 ng-change="onChange()"></select>
