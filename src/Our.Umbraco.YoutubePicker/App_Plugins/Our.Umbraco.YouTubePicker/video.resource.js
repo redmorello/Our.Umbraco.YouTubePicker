@@ -5,12 +5,14 @@ angular.module('umbraco.resources').factory('videoResource',
         return {
             search: function (apiKey, channelId, type, perPage, pageToken, q) {
                 var key = "&key=" + apiKey;
-                var channel = channelId !== null && channelId !== "" ? "&channelId=" + channelId : "";
+                var channel = channelId !== null && channelId !== "" && channelId !== undefined ? "&channelId=" + channelId : "";
                 var searchType = "&type=" + type;
                 var results = "&maxResults=" + perPage;
                 var nextPage = pageToken !== null ? "&pageToken=" + pageToken : "";
                 var query = q !== null && q !== "" ? "&q=" + encodeURI(q) : "";
-                
+
+                //console.log("https://www.googleapis.com/youtube/v3/search?part=snippet" + key + channel + searchType + results + nextPage + query)
+
                 return umbRequestHelper.resourcePromise(
                     $http.get("https://www.googleapis.com/youtube/v3/search?part=snippet" + key + channel + searchType + results + nextPage + query),
                     "Failed to retrieve the list of Videos");

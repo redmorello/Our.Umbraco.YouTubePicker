@@ -1,57 +1,98 @@
-﻿<div class="umb-editor umb-mediapicker youtubepicker" ng-controller="Our.Umbraco.YouTubePicker.Overlay">
-    <div class="header">
-        <input type="text" class="searchTerm" ng-model="model.query" placeholder="keyword search term..." />
-        <button type="button" class="btn umb-button__button btn-success" ng-click="onClick()" ng-disabled="model.submitDisabled">
-            <span class="umb-button__content">
-                <span class="ng-scope ng-binding">Submit</span>
-            </span>
-        </button>
-        <!--<input type="button" ng-click="onClick()" class="btn btn-primary" value="Search" ng-disabled="model.submitDisabled" />-->
-        <select ng-options="option as option for option in model.options"
-                ng-model="model.selectedOption"
-                ng-change="onChange()"></select>
-        <div>Total results: <span>{{model.totalResults}}</span></div>
-    </div>
+﻿<div ng-controller="Our.Umbraco.YouTubePicker.Overlay" class="youTubePicker">
+    <umb-editor-view>
 
-    <br />
+        <umb-editor-header name="model.title"
+                           name-locked="true"
+                           hide-alias="true"
+                           hide-icon="true"
+                           hide-description="true">
+        </umb-editor-header>
 
-    <div data-element="media-grid" class="umb-media-grid" ng-if="model.showResults">
+        <umb-editor-container>
 
-        <div class="pagination">
-            <ul>
-                <li class="left" ng-class="{'disabled': model.previousPageToken == null}">
-                    <a href="#" ng-click="clickPager(model.previousPageToken, 0)" prevent-default><span aria-hidden="true">&larr;</span>&nbsp;Prev&nbsp;{{model.perPage}}
-                    </a>
-                </li>
-                <li class="center">
-                    <span>{{model.currentLocation}}</span>
-                </li>
-                <li class="right" ng-class="{'disabled': model.nextPageToken == null}">
-                    <a href="#" ng-click="clickPager(model.nextPageToken, 1)" prevent-default>
-                        &nbsp;Next&nbsp;{{model.perPage}}<span aria-hidden="true">&rarr;</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <div class="form-search">
+                <i class="icon-search"></i>
+                <input type="text" ng-model="model.query" autocomplete="off"
+                       class="umb-property-editor umb-textstring textstring"
+                       ng-required="model.validation.mandatory"
+                       placeholder="keyword search term..."
+                       ng-trim="false" />
 
-        <div data-element="media-grid-item-{{$index}}" style="width: 45%;" class="umb-media-grid__item" title="{{item.snippet.title}}" ng-click="clickItem(item, model.items, $index)" ng-repeat="item in model.items | filter:filterBy" ng-class="{'-selected': item.selected}">
-            <div>
-                <i ng-show="item.selected" class="icon-check umb-media-grid__checkmark"></i>
+                <select ng-options="option as option for option in model.options"
+                        ng-model="model.selectedOption"
+                        ng-change="onChange()"></select>
 
-                <div data-element="media-grid-item-edit" class="umb-media-grid__item-overlay" ng-class="{'-locked': item.selected}" ng-click="clickItem(item, model.items, $index)">
-                    <div class="umb-media-grid__item-name">{{item.snippet.title}}</div>
-                </div>
-
-                <!-- Check backgrund -->
-                <div class="umb-media-grid__image-background" ng-if="item.snippet.thumbnails.high"></div>
-
-                <!-- Image thumbnail -->
-                <img class="umb-media-grid__item-image" width="{{item.snippet.thumbnails.high.width}}" height="{{item.snippet.thumbnails.high.height}}" ng-if="item.snippet.thumbnails.high" ng-src="{{item.snippet.thumbnails.high.url}}" alt="{{item.snippet.title}}" draggable="false" />
-
-                <!-- Transparent image - fallback - used to keep image proportions on wrapper-->
-                <img class="umb-media-grid__item-image-placeholder" ng-if="!item.snippet.thumbnails.high || !item.snippet.thumbnails.high.url" src="assets/img/transparent.png" alt="{{item.snippet.title}}" draggable="false" />
+                <button type="button" class="btn umb-button__button btn-success" ng-click="onClick()" ng-disabled="model.submitDisabled">
+                    <span class="umb-button__content">
+                        <span class="ng-scope ng-binding">Search</span>
+                    </span>
+                </button>
             </div>
-        </div>
-    </div>
+
+            <umb-load-indicator ng-if="model.loading">
+            </umb-load-indicator>
+
+            <div class="results" ng-if="!model.loading">
+                <div data-element="media-grid-item-{{$index}}" class="umb-media-grid__item animate-show" fade-in title="{{item.snippet.title}}" ng-click="clickItem(item, model.items, $index)" ng-repeat="item in model.items | filter:filterBy" ng-class="{'-selected': item.selected}">
+                    <div>
+                        <i ng-show="item.selected" class="icon-check umb-media-grid__checkmark"></i>
+
+                        <div data-element="media-grid-item-edit" class="umb-media-grid__item-overlay" ng-class="{'-locked': item.selected}" ng-click="clickItem(item, model.items, $index)">
+                            <div class="umb-media-grid__item-name">{{item.snippet.title}}</div>
+                        </div>
+
+                        <!-- Check backgrund -->
+                        <div class="umb-media-grid__image-background" ng-if="item.snippet.thumbnails.high"></div>
+
+                        <!-- Image thumbnail -->
+                        <img class="umb-media-grid__item-image" width="{{item.snippet.thumbnails.high.width}}" height="{{item.snippet.thumbnails.high.height}}" ng-if="item.snippet.thumbnails.high" ng-src="{{item.snippet.thumbnails.high.url}}" alt="{{item.snippet.title}}" draggable="false" />
+
+                        <!-- Transparent image - fallback - used to keep image proportions on wrapper -->
+                        <img class="umb-media-grid__item-image-placeholder" ng-if="!item.snippet.thumbnails.high || !item.snippet.thumbnails.high.url" src="assets/img/transparent.png" alt="{{item.snippet.title}}" draggable="false" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="umb-pagination pagination">
+                <div ng-show="model.totalPages > 1 && model.showResults">
+                    <ul>
+                        <li ng-class="{disabled:model.previousPageToken == null}">
+                            <a href="#" ng-click="clickPager(model.previousPageToken, 0)" prevent-default>
+                                <localize key="general_previous">Previous</localize>
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <span>{{model.currentLocation}}</span>
+                        </li>
+                        
+                        <li ng-class="{disabled:model.nextPageToken == null}">
+                            <a href="#" ng-click="clickPager(model.nextPageToken, 1)" prevent-default>
+                                <localize key="general_next">Next</localize>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </umb-editor-container>
+
+        <umb-editor-footer>
+            <umb-editor-footer-content-left>
+                <div>Total results: <span>{{model.totalResults}}</span></div>
+            </umb-editor-footer-content-left>
+            <umb-editor-footer-content-right>
+
+                <umb-button action="close()"
+                            button-style="link"
+                            shortcut="esc"
+                            label-key="general_close"
+                            type="button">
+                </umb-button>
+            </umb-editor-footer-content-right>
+        </umb-editor-footer>
+
+    </umb-editor-view>
 
 </div>

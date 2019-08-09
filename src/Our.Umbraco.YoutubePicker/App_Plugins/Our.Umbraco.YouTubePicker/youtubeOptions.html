@@ -1,0 +1,109 @@
+﻿<div ng-controller="Our.Umbraco.YouTubePicker.Overlay" class="youTubePicker">
+    <umb-editor-view>
+
+        <umb-editor-header name="model.title"
+                           name-locked="true"
+                           hide-alias="true"
+                           hide-icon="true"
+                           hide-description="true">
+        </umb-editor-header>
+
+        <umb-editor-container>
+
+            <umb-load-indicator ng-if="model.loading">
+            </umb-load-indicator>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="span1">
+                        <div class="umb-property-editor umb-boolean">
+                            <umb-toggle checked="model.nocookie"
+                                        on-click="model.nocookie = !model.nocookie">
+                            </umb-toggle>
+                        </div>
+                    </div>
+                    <div class="span11">
+                        <label>If the parameter is checked, we'll use the https://www.youtube-nocookie.com/ embed link instead.</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span1">
+                        <div class="umb-property-editor umb-boolean">
+                            <umb-toggle checked="model.rel"
+                                        on-click="model.rel = !model.rel">
+                            </umb-toggle>
+                        </div>
+                    </div>
+                    <div class="span11">
+                        <label>If the parameter is unchecked, then related videos will come from the same channel as the video that was just played. If the parameter is checked, then the player shows related videos from YouTube.</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span1">
+                        <div class="umb-property-editor umb-boolean">
+                            <umb-toggle checked="model.modestbranding"
+                                        on-click="model.modestbranding = !model.modestbranding">
+                            </umb-toggle>
+                        </div>
+                    </div>
+                    <div class="span11">
+                        <label>Set the parameter to checked to prevent the YouTube logo from displaying in the control bar.</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span1">
+                        <div class="umb-property-editor umb-boolean">
+                            <umb-toggle checked="model.autoplay"
+                                        on-click="model.autoplay = !model.autoplay">
+                            </umb-toggle>
+                        </div>
+                    </div>
+                    <div class="span11">
+                        <label>Checking this parameter makes the initial video automatically start to play when the player loads.</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span1">
+                        <div class="umb-property-editor umb-boolean">
+                            <umb-toggle checked="model.fs"
+                                        on-click="model.fs = !model.fs">
+                            </umb-toggle>
+                        </div>
+                    </div>
+                    <div class="span11">
+                        <label>Set the parameter to checked to prevent the fullscreen button from displaying in the player.</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span12">
+                        <button type="button" class="btn umb-button__button btn-success" ng-click="onOptionsSelect()" ng-disabled="model.submitDisabled">
+                            <span class="umb-button__content">
+                                <span class="ng-scope ng-binding">Submit</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>            
+
+        </umb-editor-container>
+
+        <umb-editor-footer>
+
+            <umb-editor-footer-content-right>
+                <umb-button action="close()"
+                            button-style="link"
+                            shortcut="esc"
+                            label-key="general_close"
+                            type="button">
+                </umb-button>
+            </umb-editor-footer-content-right>
+        </umb-editor-footer>
+
+    </umb-editor-view>
+
+</div>

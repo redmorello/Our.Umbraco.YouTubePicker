@@ -9,7 +9,7 @@
 			/*the icon*/
 			icon: "icon-video",
 			/*grouping for "Select editor" dialog*/
-			group: "Content Picker",
+			group: "Media",
 			/*the HTML file we will load for the editor*/
 			editor: {
 				view: "~/App_Plugins/Our.Umbraco.YouTubePicker/youtubepicker.html"
@@ -43,6 +43,12 @@
 								type: "Required" 
 							}                        
 						]
+					},
+					{
+						label: "Allow Editors to change Video properties",
+						description: "If the parameter is checked, editors will be allowed to change the following properties.",
+						key: "alloweditors",
+						view: "boolean"
 					},
 					{
 						label: "No Cookie Embed Player",

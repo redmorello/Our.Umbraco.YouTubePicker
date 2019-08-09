@@ -11,7 +11,7 @@
     <iconUrl>https://github.com/redmorello/Our.Umbraco.YouTubePicker/blob/master/images/youtube.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Umbraco CMS Datatype - YouTube Picker</description>
-    <releaseNotes>Changed the way we search YouTube, added a text search box, and a number of new YouTube settings in the developer section.</releaseNotes>
+    <releaseNotes>Converted package to Umbraco V8, added ability to configure video options on a per video basis.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Our.Umbraco.YouTubePicker Umbraco YouTube Property Editor Our CMS Contrib lib library</tags>
   </metadata>
