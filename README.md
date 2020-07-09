@@ -19,6 +19,13 @@ Usage:
 *When creating the nuget package, use the following command*
 nuget pack Our.Umbraco.YouTubePicker.csproj -Exclude bin/**/*.*
 
+Setup:
+1) Login to your Google account and go to: https://console.developers.google.com/apis/api/youtube.googleapis.com/overview OR in the "Search for APIs and Services" box, search for 'YouTube Data API v3'
+2) Click the button to "Enable" the API.
+3) Create a new API Key (https://console.developers.google.com/apis/api/youtube.googleapis.com/credentials). If you restrict it, make sure the YouTube API is allowed.
+4) To find your Channel ID, go to https://www.youtube.com/account_advanced, where it is listed. 
+
+## Resources ##
 
 *YouTube API Explorer*
 
